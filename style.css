@@ -41,6 +41,10 @@
   text-align: end;
 }
 
+#counter {
+  text-align: end;
+}
+
 #footer {
   text-align: center;
   position: absolute;

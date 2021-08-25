@@ -4,6 +4,7 @@ const senha = document.getElementById('senha');
 const agreed = document.getElementById('agreement');
 const button = document.getElementById('submit-btn');
 const textArea = document.getElementById('textarea');
+const count = document.getElementById('counter');
 
 /* Função botão de login */
 function btnLogin() {
@@ -17,26 +18,23 @@ function btnLogin() {
 }
 
 /* Função habilita botão */
-button.disabled = true;
 function habilitaBtn() {
-  if (agreed.value === '') {
-    button.disabled = true;
-  } else {
+  if (agreed.checked) {
     button.disabled = false;
+  } else {
+    button.disabled = true;
   }
 }
 
 function countChars(event) {
-  let maxChars = 500;
-  let inputLength = textArea.value.length + 1;
-  let restante = 0;
+  let restante = 500;
+  const inputLength = textArea.value.length;
   if (inputLength > 0) {
-    restante = maxChars - inputLength;
+    restante -= inputLength;
   }
-  //console.log(inputLength);
-  console.log(restante);
+  count.innerText = `${restante} Restantes`;
 }
 
 buttonLogin.addEventListener('click', btnLogin);
 agreed.addEventListener('change', habilitaBtn);
-textArea.addEventListener('keypress', countChars);
+textArea.addEventListener('keyup', countChars);
