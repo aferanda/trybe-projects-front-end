@@ -1,6 +1,8 @@
 const buttonLogin = document.getElementById('button-login');
 const email = document.getElementById('email');
 const senha = document.getElementById('senha');
+const agreed = document.getElementById("agreement");
+const button = document.getElementById("submit-btn");
 
 /* Função butão de login */
 function btnLogin() {
@@ -14,3 +16,17 @@ function btnLogin() {
 }
 
 buttonLogin.addEventListener('click', btnLogin);
+
+
+
+button.disabled = true;
+
+function habilitaBtn() {
+  if (agreed.value === "") {
+    button.disabled = true; 
+  } else {
+    button.disabled = false;
+  }
+}
+
+agreed.addEventListener("change", habilitaBtn);
