@@ -3,6 +3,7 @@ const email = document.getElementById('email');
 const senha = document.getElementById('senha');
 const agreed = document.getElementById('agreement');
 const button = document.getElementById('submit-btn');
+const textArea = document.getElementById('textarea');
 
 /* Função botão de login */
 function btnLogin() {
@@ -25,5 +26,17 @@ function habilitaBtn() {
   }
 }
 
+function countChars(event) {
+  let maxChars = 500;
+  let inputLength = textArea.value.length + 1;
+  let restante = 0;
+  if (inputLength > 0) {
+    restante = maxChars - inputLength;
+  }
+  //console.log(inputLength);
+  console.log(restante);
+}
+
 buttonLogin.addEventListener('click', btnLogin);
 agreed.addEventListener('change', habilitaBtn);
+textArea.addEventListener('keypress', countChars);
