@@ -38,7 +38,7 @@ html {
 
 #trybewarts-header-title {
   color: white;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.2rem;
   font-weight: 700;
 }
 
@@ -92,8 +92,8 @@ h2 {
   margin-bottom: 10px;
 }
 
-#casa select {
-  width: 88%;
+#house {
+  width: 100%;
 }
 
 .section {
@@ -125,6 +125,10 @@ h2 {
 
 #submit-btn {
   margin-top: 10px;
+}
+
+#submit-btn:disabled {
+  background-color: rgba(211, 211, 211, 0.87);
 }
 
 #footer {
