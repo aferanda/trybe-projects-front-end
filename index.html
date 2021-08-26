@@ -14,11 +14,12 @@
     <form class="trybewarts-login container">
         <input id="email" type="email" name="email" placeholder="Email">
         <input id="senha" type="password" name="password" placeholder="Senha">
-        <button id="button-login" type="submit">Entrar</button>
+        <button id="button-login" class="btn" type="submit">Entrar</button>
     </form>
 </header>
 <main class="container">
-  <form id="evaluation-form" class="container" action="">
+  <form id="evaluation-form" class="container column" action="">
+    <h2>Formulário de Avaliação</h2>
     <div class="nome-sobrenome">
       <input type="text" name="name" id="input-name" placeholder="Nome">
       <input type="text" name="lastname" id="input-lastname" placeholder="Sobrenome">
@@ -67,11 +68,11 @@
     </div>
     <div class="container column">
       <label for="textarea" class="textarea">Deixe seu comentário:</label>
-      <textarea name="" id="textarea" cols="30" rows="10" maxlength="500" placeholder="500"></textarea>
+      <textarea name="" id="textarea" cols="30" rows="10" maxlength="500"></textarea>
       <span id="counter">500 Restantes</span>
     </div>
     <label for="agreement" id="label-infos">Você concorda com o uso das informações acima? <input type="checkbox" name="" id="agreement"></label>
-    <button type="submit" id="submit-btn" disabled>Enviar</button>
+    <button type="submit" id="submit-btn" class="btn" disabled>Enviar</button>
   </form>
   <img id="trybewarts-forms-logo" src="images/trybewarts-colored.svg" alt="trybewarts">
 </main>

@@ -1,23 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=David+Libre:wght@400;500;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.header {
-  background-color: rgb(50, 167, 145);
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-  height: 70px;
-}
-
-#trybewarts-header-title {
-  color: white;
-}
-
-.trybewarts-header-logo {
-  width: 50px;
+html {
+  font-family: David Libre, serif;
+  background-color: whitesmoke;
 }
 
 .container {
@@ -28,21 +19,74 @@
   flex-direction: column;
 }
 
+.header {
+  background-color: rgb(50, 167, 145);
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 70px;
+}
+
+.btn {
+  background-color: darkslateblue;
+  color: white;
+  font-family: David Libre, serif;
+  border-radius: 5px;
+  border: none;
+  padding: 10px 20px;
+}
+
+#trybewarts-header-title {
+  color: white;
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+}
+
+.trybewarts-header-logo {
+  width: 50px;
+}
+
+form input , select {
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-family: David Libre, serif;
+}
+
+#email , #senha {
+  width: 120px;
+  margin-right: 10px;
+}
+
+#button-login {
+  width: 120px;
+  padding: 10px 20px;
+}
+
+main {
+  justify-content: space-around;
+  margin: 30px 50px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
 #evaluation-form {
   width: 675px;
-  flex-direction: column;
 }
 
 #trybewarts-forms-logo {
   height: 500px;
 }
 
-#text-area {
+#counter {
   text-align: end;
 }
 
-#counter {
-  text-align: end;
+#submit-btn {
+  margin-top: 10px;
 }
 
 #footer {
@@ -53,4 +97,5 @@
   padding: 15px;
   background-color: rgb(50, 167, 145);
   color: white;
+  font-family: David Libre, serif;
 }
