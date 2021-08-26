@@ -44,7 +44,7 @@ function countChars() {
 }
 
 function fullName() {
-  const inputFullName = `Name: ${inputName.value} ${inputLastName.value}`;
+  const inputFullName = `Nome: ${inputName.value} ${inputLastName.value}`;
   return inputFullName;
 }
 
@@ -69,10 +69,12 @@ function familyForm() {
 }
 
 function subjectsForm() {
-  let subjectValue = 'Matérias:';
+  let subjectValue = 'Matérias: ';
   for (let index = 0; index < inputSubjects.length; index += 1) {
     if (inputSubjects[index].checked) {
-      subjectValue += ' ';
+      if (index > 1) {
+        subjectValue += ', ';
+      }
       subjectValue += `${inputSubjects[index].value}`;
     }
   }
