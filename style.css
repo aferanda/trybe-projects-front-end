@@ -34,6 +34,12 @@ html {
   border-radius: 5px;
   border: none;
   padding: 10px 20px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: rgb(43, 35, 94);
+  transition: 0.3s;
 }
 
 #trybewarts-header-title {
@@ -93,6 +99,10 @@ h2 {
   margin-bottom: 10px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.11);
   border-radius: 5px;
+}
+
+#input-name , #input-lastname , #input-email {
+  padding-left: 14px;
 }
 
 #house {
