@@ -68,10 +68,32 @@ function familyForm() {
   return familyValue;
 }
 
+function subjectsForm() {
+  let subjectValue = 'Matérias:';
+  for (let index = 0; index < inputSubjects.length; index += 1) {
+    if (inputSubjects[index].checked) {
+      subjectValue += ' ';
+      subjectValue += `${inputSubjects[index].value}`;
+    }
+  }
+  return subjectValue;
+}
+function rateForm() {
+  let rateValue = '';
+  for (let index = 0; index < inputRate.length; index += 1) {
+    if (inputRate[index].checked) {
+      rateValue = `Avaliação: ${inputRate[index].value}`;
+    }
+  }
+  return rateValue;
+}
+
 fullName();
 emailForm();
 houseForm();
 familyForm();
+subjectsForm();
+rateForm();
 
 buttonLogin.addEventListener('click', btnLogin);
 agreed.addEventListener('change', habilitaBtn);
