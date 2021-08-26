@@ -2,9 +2,9 @@ const buttonLogin = document.getElementById('button-login');
 const email = document.getElementById('email');
 const senha = document.getElementById('senha');
 const agreed = document.getElementById('agreement');
-const button = document.getElementById('submit-btn');
+const buttonSubmit = document.getElementById('submit-btn');
 const count = document.getElementById('counter');
-
+const form = document.getElementById('evaluation-form');
 const inputName = document.getElementById('input-name');
 const inputLastName = document.getElementById('input-lastname');
 const inputEmail = document.getElementById('input-email');
@@ -28,9 +28,9 @@ function btnLogin() {
 /* Função habilita botão */
 function habilitaBtn() {
   if (agreed.checked) {
-    button.disabled = false;
+    buttonSubmit.disabled = false;
   } else {
-    button.disabled = true;
+    buttonSubmit.disabled = true;
   }
 }
 
@@ -59,7 +59,7 @@ function houseForm() {
 }
 
 function familyForm() {
-  let familyValue = '';
+  let familyValue;
   for (let index = 0; index < inputFamily.length; index += 1) {
     if (inputFamily[index].checked) {
       familyValue = `Família: ${inputFamily[index].value}`;
@@ -93,14 +93,26 @@ function textAreaForm() {
   return textAreaValue;
 }
 
-fullName();
-emailForm();
-houseForm();
-familyForm();
-subjectsForm();
-rateForm();
-textAreaForm();
+function forms() {
+  const allFunctions = [fullName(),
+    emailForm(),
+    houseForm(),
+    familyForm(),
+    subjectsForm(),
+    rateForm(),
+    textAreaForm(),
+  ];
+  const div = document.createElement('div');
+  for (let index = 0; index < allFunctions.length; index += 1) {
+    const paragraph = document.createElement('p');
+    paragraph.innerText = allFunctions[index];
+    div.appendChild(paragraph);
+  }
+  form.innerHTML = '';
+  form.appendChild(div);
+}
 
 buttonLogin.addEventListener('click', btnLogin);
 agreed.addEventListener('change', habilitaBtn);
 textArea.addEventListener('keyup', countChars);
+buttonSubmit.addEventListener('click', forms);
