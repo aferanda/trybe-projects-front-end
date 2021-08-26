@@ -26,7 +26,7 @@ function habilitaBtn() {
   }
 }
 
-function countChars(event) {
+function countChars() {
   let restante = 500;
   const inputLength = textArea.value.length;
   if (inputLength > 0) {
