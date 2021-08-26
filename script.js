@@ -88,12 +88,18 @@ function rateForm() {
   return rateValue;
 }
 
+function textAreaForm() {
+  const textAreaValue = `Observações: ${textArea.value}`;
+  return textAreaValue;
+}
+
 fullName();
 emailForm();
 houseForm();
 familyForm();
 subjectsForm();
 rateForm();
+textAreaForm();
 
 buttonLogin.addEventListener('click', btnLogin);
 agreed.addEventListener('change', habilitaBtn);
