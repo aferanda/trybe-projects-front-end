@@ -72,10 +72,10 @@ function subjectsForm() {
   let subjectValue = 'Matérias: ';
   for (let index = 0; index < inputSubjects.length; index += 1) {
     if (inputSubjects[index].checked) {
-      subjectValue += `${inputSubjects[index].value}`;
-      subjectValue += ', ';
+      subjectValue += `${inputSubjects[index].value}, `;
     }
   }
+  subjectValue = subjectValue.replace(/(, )$/, '');
   return subjectValue;
 }
 
