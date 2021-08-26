@@ -72,14 +72,13 @@ function subjectsForm() {
   let subjectValue = 'Matérias: ';
   for (let index = 0; index < inputSubjects.length; index += 1) {
     if (inputSubjects[index].checked) {
-      if (index > 1) {
-        subjectValue += ', ';
-      }
       subjectValue += `${inputSubjects[index].value}`;
+      subjectValue += ', ';
     }
   }
   return subjectValue;
 }
+
 function rateForm() {
   let rateValue = '';
   for (let index = 0; index < inputRate.length; index += 1) {
