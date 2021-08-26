@@ -71,6 +71,7 @@ main {
 h2 {
   text-align: center;
   margin-bottom: 15px;
+  font-weight: 600;
 }
 
 #evaluation-form {
@@ -79,6 +80,43 @@ h2 {
 
 #trybewarts-forms-logo {
   height: 500px;
+}
+
+.sub-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+#input-name , #input-lastname , #input-email , #casa {
+  width: 49.5%;
+  margin-bottom: 10px;
+}
+
+#casa select {
+  width: 88%;
+}
+
+.section {
+  margin: 15px 0;
+}
+
+.sub-section {
+  justify-content: space-around;
+  height: 100px;
+}
+
+.sub-section:nth-of-type( 1 ) {
+  width: 40%;
+}
+
+.skills {
+  margin-top: 10px;
+  justify-content: space-between;
+  height: 30px;
+}
+
+.section-rate {
+  justify-content: space-between;
 }
 
 #counter {
