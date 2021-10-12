@@ -12,6 +12,8 @@ class Card extends Component {
       cardImage,
       cardRare,
       cardTrunfo,
+      check,
+      deleteCard,
     } = this.props;
 
     return (
@@ -29,8 +31,25 @@ class Card extends Component {
           </div>
           <p data-testid="rare-card">{ cardRare }</p>
           { cardTrunfo
-            ? <p data-testid="trunfo-card">Super Trunfo</p>
-            : cardTrunfo }
+            ? (
+              <p
+                id="trunfo-input"
+                data-testid="trunfo-card"
+              >
+                Super Trunfo
+              </p>)
+            : cardTrunfo}
+          { check
+              && (
+                <button
+                  id={ cardName }
+                  type="button"
+                  onClick={ deleteCard }
+                  data-testid="delete-button"
+                >
+                  Excluir
+                </button>
+              )}
         </div>
       </div>
     );

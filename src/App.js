@@ -28,6 +28,7 @@ class App extends React.Component {
     this.onInputChange = this.onInputChange.bind(this);
     this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
     this.renderAllCards = this.renderAllCards.bind(this);
+    this.deleteCard = this.deleteCard.bind(this);
   }
 
   onInputChange({ target }) {
@@ -86,9 +87,30 @@ class App extends React.Component {
     }
   }
 
+  deleteCard({ target }) {
+    const { cardList } = this.state;
+    const { id } = target.previousSibling;
+
+    this.setState({
+      cardList: cardList.filter((card) => card.cardName !== target.id),
+    });
+
+    if (id) {
+      this.setState({
+        hasTrunfo: false,
+      });
+    }
+  }
+
   renderAllCards() {
     const { cardList } = this.state;
-    return cardList.map((card) => <Card key={ card.cardName } { ...card } />);
+    return cardList
+      .map((card) => (<Card
+        key={ card.cardName }
+        { ...card }
+        check
+        deleteCard={ this.deleteCard }
+      />));
   }
 
   render() {
@@ -104,7 +126,9 @@ class App extends React.Component {
         </section>
         <section className="section-card">
           <h2 className="card-title">Pré-visualização</h2>
-          <Card { ...this.state } />
+          <Card
+            { ...this.state }
+          />
         </section>
         <section className="section-all-cards">
           <h2>Todas as cartas</h2>

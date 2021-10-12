@@ -108,7 +108,7 @@ class Form extends Component {
             <option value="muito raro">muito raro</option>
           </select>
         </label>
-        { hasTrunfo
+        { hasTrunfo === true
           ? <p>Você já tem um Super Trunfo em seu baralho</p>
           : (
             <label htmlFor="trunfo-input">
