@@ -7,11 +7,11 @@ import Card from './components/Card';
 const defaultState = {
   cardName: '',
   cardDescription: '',
-  cardAttr1: '',
-  cardAttr2: '',
-  cardAttr3: '',
+  cardAttr1: 0,
+  cardAttr2: 0,
+  cardAttr3: 0,
   cardImage: '',
-  cardRare: '',
+  cardRare: 'normal',
   cardTrunfo: false,
   hasTrunfo: false,
   isSaveButtonDisabled: true,
@@ -20,9 +20,13 @@ class App extends React.Component {
   constructor() {
     super();
 
-    this.state = { ...defaultState };
+    this.state = {
+      ...defaultState,
+      cardList: [],
+    };
 
     this.onInputChange = this.onInputChange.bind(this);
+    this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
   }
 
   onInputChange({ target }) {
@@ -62,12 +66,21 @@ class App extends React.Component {
     });
   }
 
+  onSaveButtonClick(event) {
+    event.preventDefault();
+    const { cardList } = this.state;
+    cardList.push({ ...this.state });
+
+    this.setState({ ...defaultState });
+  }
+
   render() {
     return (
       <div className="App">
         <Form
           { ...this.state }
           onInputChange={ this.onInputChange }
+          onSaveButtonClick={ this.onSaveButtonClick }
         />
         <Card { ...this.state } />
       </div>

@@ -20,7 +20,7 @@ class Form extends Component {
     return (
       <section className="section-form">
         <h2 className="form-title">Adicionar nova carta</h2>
-        <form className="form">
+        <form onSubmit={ onSaveButtonClick } className="form">
           <label htmlFor="name-input">
             Nome
             <input
