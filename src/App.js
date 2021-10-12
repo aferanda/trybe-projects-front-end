@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-// import PropType from 'prop-types';
 import Form from './components/Form';
 import Card from './components/Card';
 
@@ -16,6 +15,7 @@ const defaultState = {
   hasTrunfo: false,
   isSaveButtonDisabled: true,
 };
+
 class App extends React.Component {
   constructor() {
     super();
@@ -27,6 +27,7 @@ class App extends React.Component {
 
     this.onInputChange = this.onInputChange.bind(this);
     this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
+    this.renderAllCards = this.renderAllCards.bind(this);
   }
 
   onInputChange({ target }) {
@@ -68,28 +69,50 @@ class App extends React.Component {
 
   onSaveButtonClick(event) {
     event.preventDefault();
-    const { cardList } = this.state;
+    const { cardList, cardTrunfo } = this.state;
     cardList.push({ ...this.state });
 
-    this.setState({ ...defaultState });
+    if (cardTrunfo === true) {
+      this.setState({
+        ...defaultState,
+        hasTrunfo: true,
+        cardTrunfo: true,
+      });
+    } else {
+      this.setState({
+        ...defaultState,
+        hasTrunfo: false,
+      });
+    }
+  }
+
+  renderAllCards() {
+    const { cardList } = this.state;
+    return cardList.map((card) => <Card key={ card.cardName } { ...card } />);
   }
 
   render() {
     return (
       <div className="App">
-        <Form
-          { ...this.state }
-          onInputChange={ this.onInputChange }
-          onSaveButtonClick={ this.onSaveButtonClick }
-        />
-        <Card { ...this.state } />
+        <section className="section-form">
+          <h2 className="form-title">Adicionar nova carta</h2>
+          <Form
+            { ...this.state }
+            onInputChange={ this.onInputChange }
+            onSaveButtonClick={ this.onSaveButtonClick }
+          />
+        </section>
+        <section className="section-card">
+          <h2 className="card-title">Pré-visualização</h2>
+          <Card { ...this.state } />
+        </section>
+        <section className="section-all-cards">
+          <h2>Todas as cartas</h2>
+          { this.renderAllCards() }
+        </section>
       </div>
     );
   }
 }
-
-App.propTypes = {
-
-};
 
 export default App;
