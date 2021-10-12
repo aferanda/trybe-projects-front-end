@@ -29,6 +29,7 @@ class Form extends Component {
               onChange={ onInputChange }
               value={ cardName }
               data-testid="name-input"
+              required
             />
           </label>
           <label htmlFor="description-input">
@@ -40,6 +41,7 @@ class Form extends Component {
               value={ cardDescription }
               onChange={ onInputChange }
               data-testid="description-input"
+              required
             />
           </label>
           <label htmlFor="attr1-input">
@@ -48,6 +50,8 @@ class Form extends Component {
               type="number"
               name="cardAttr1"
               id=""
+              min="0"
+              max="90"
               value={ cardAttr1 }
               onChange={ onInputChange }
               data-testid="attr1-input"
@@ -59,6 +63,8 @@ class Form extends Component {
               type="number"
               name="cardAttr2"
               id=""
+              min="0"
+              max="90"
               value={ cardAttr2 }
               onChange={ onInputChange }
               data-testid="attr2-input"
@@ -70,6 +76,8 @@ class Form extends Component {
               type="number"
               name="cardAttr3"
               id=""
+              min="0"
+              max="90"
               value={ cardAttr3 }
               onChange={ onInputChange }
               data-testid="attr3-input"
@@ -83,6 +91,7 @@ class Form extends Component {
               value={ cardImage }
               onChange={ onInputChange }
               data-testid="image-input"
+              required
             />
           </label>
           <label htmlFor="rare-input">
@@ -90,10 +99,10 @@ class Form extends Component {
             <select
               name="cardRare"
               id=""
-              defaultValue=""
               value={ cardRare }
               onChange={ onInputChange }
               data-testid="rare-input"
+              required
             >
               <option value="normal">normal</option>
               <option value="raro">raro</option>
