@@ -21,7 +21,12 @@ class Card extends Component {
         <div className="card-box">
           <div className="card-header">
             <h3 data-testid="name-card">{ cardName }</h3>
-            <img data-testid="image-card" src={ cardImage } alt={ cardName } />
+            <img
+              data-testid="image-card"
+              src={ cardImage }
+              alt={ cardName }
+              className="image-card"
+            />
           </div>
           <p data-testid="description-card">{ cardDescription }</p>
           <div className="card-attr">

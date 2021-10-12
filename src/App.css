@@ -32,8 +32,14 @@ html, body {
 
 .section-all-cards {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   width: 100%;
+}
+
+.section-all-cards h2 {
+  display: flex;
+  width: 100%;
+  line-height: 100px;
 }
 
 .form-title, .card-title {
@@ -127,4 +133,8 @@ html, body {
 
 .card .card-attr {
   background-color: #fafafa;
+}
+
+.image-card {
+  max-width: 266px;
 }
