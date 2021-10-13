@@ -16,6 +16,8 @@ const defaultState = {
   isSaveButtonDisabled: true,
 };
 
+let haveTrunfo = false;
+
 class App extends React.Component {
   constructor() {
     super();
@@ -73,17 +75,13 @@ class App extends React.Component {
     const { cardList, cardTrunfo } = this.state;
     cardList.push({ ...this.state });
 
-    if (cardTrunfo === true) {
-      this.setState({
-        ...defaultState,
-        hasTrunfo: true,
-        cardTrunfo: true,
-      });
+    if (haveTrunfo) {
+      this.setState({ ...defaultState, hasTrunfo: true });
+    } else if (cardTrunfo) {
+      haveTrunfo = true;
+      this.setState({ ...defaultState, hasTrunfo: true });
     } else {
-      this.setState({
-        ...defaultState,
-        hasTrunfo: false,
-      });
+      this.setState({ ...defaultState });
     }
   }
 
