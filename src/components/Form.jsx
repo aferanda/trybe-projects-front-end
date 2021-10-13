@@ -61,7 +61,6 @@ class Form extends Component {
           <input
             type="number"
             name="cardAttr2"
-            id=""
             min="0"
             max="90"
             value={ cardAttr2 }
@@ -74,7 +73,6 @@ class Form extends Component {
           <input
             type="number"
             name="cardAttr3"
-            id=""
             min="0"
             max="90"
             value={ cardAttr3 }
@@ -97,7 +95,6 @@ class Form extends Component {
           Raridade
           <select
             name="cardRare"
-            id=""
             value={ cardRare }
             onChange={ onInputChange }
             data-testid="rare-input"
@@ -116,6 +113,7 @@ class Form extends Component {
                 type="checkbox"
                 name="cardTrunfo"
                 id="trunfo-input"
+                className="trunfo"
                 checked={ cardTrunfo }
                 onChange={ onInputChange }
                 data-testid="trunfo-input"
