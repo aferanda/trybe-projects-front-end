@@ -87,7 +87,7 @@ class App extends React.Component {
 
   deleteCard({ target }) {
     const { cardList } = this.state;
-    const { id } = target.previousSibling;
+    const { id } = target.previousSibling.lastChild;
 
     this.setState({
       cardList: cardList.filter((card) => card.cardName !== target.id),

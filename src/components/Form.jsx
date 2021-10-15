@@ -49,7 +49,6 @@ class Form extends Component {
           <input
             type="number"
             name="cardAttr1"
-            id=""
             min="0"
             max="90"
             value={ cardAttr1 }

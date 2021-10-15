@@ -42,16 +42,19 @@ class Card extends Component {
             <span>Attr03</span>
             <p data-testid="attr3-card">{ cardAttr3 }</p>
           </div>
-          <p data-testid="rare-card">{ cardRare }</p>
-          { cardTrunfo
-            ? (
-              <p
-                id="trunfo-input"
-                data-testid="trunfo-card"
-              >
-                Super Trunfo
-              </p>)
-            : cardTrunfo}
+          <div className="card-rare-trunfo">
+            <p data-testid="rare-card">{ cardRare }</p>
+            { cardTrunfo
+              ? (
+                <p
+                  id="trunfo-input"
+                  className="card-trunfo"
+                  data-testid="trunfo-card"
+                >
+                  Super Trunfo
+                </p>)
+              : cardTrunfo}
+          </div>
           { check
               && (
                 <button
