@@ -1,8 +1,15 @@
 import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 class App extends React.Component {
   render() {
-    return (<p>TrybeTunes</p>);
+    return (
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" component={ Login } />
+        </Switch>
+      </BrowserRouter>
+    );
   }
 }
 
