@@ -50,7 +50,12 @@ class Album extends Component {
       <div data-testid="page-album">
         <Header />
         { this.getInfoMusics() }
-        <MusicCard album={ album } />
+        { album.slice(1).map((music) => (
+          <MusicCard
+            key={ music.trackId }
+            music={ music }
+          />
+        ))}
       </div>
     );
   }
