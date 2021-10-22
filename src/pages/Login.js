@@ -50,14 +50,16 @@ class Login extends Component {
       <div data-testid="page-login">
         { loading && <Loading /> }
         { search && <Redirect to="/search" /> }
-        <form>
+        <form className="container ctn-login">
           <label htmlFor="login-name-input">
-            Nome:
+            <span>Nome:</span>
             <input
               type="text"
               name="name"
+              autoComplete="off"
               value={ name }
               onChange={ this.onInputChange }
+              placeholder="Nome"
               data-testid="login-name-input"
             />
           </label>

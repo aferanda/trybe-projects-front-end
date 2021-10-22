@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@700&display=swap') ;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+
+  --bg-main: #fafafa;
+
+  --bg-grad-one: #e66465;
+
+  --bg-grad-two: #9198e5;
+
+  --sh-one: 0 1px 4px rgba(0, 0, 0, 0.3);
+
+  --sh-two: -20px 0 20px -23px rgba(0, 0, 0, 0.8);
+
+  --sh-three: 20px 0 20px -23px rgba(0, 0, 0, 0.8);
+
+  --sh-four: inset 0 0 40px rgba(0, 0, 0, 0.1);
+}
+
+html, body {
+  background-color: var(--bg-main);
+}
+
+body {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.ctn-login {
+  background: linear-gradient(216deg, var(--bg-grad-one), var(--bg-grad-two));
+  border-radius: 15px;
+  box-shadow: var(--sh-one) , var(--sh-two) , var(--sh-three) , var(--sh-four);
+  flex-direction: column;
+  height: 300px;
+  opacity: 0.9;
+  width: 500px;
+}
+
+.ctn-login input::placeholder {
+  font-family: Merienda , cursive;
+  opacity: 0.6;
+}
+
+.ctn-login label span {
+  display: none;
+}
+
+.ctn-login label, .ctn-login button {
+  width: 70%;
+}
+
+.ctn-login input, .ctn-login button {
+  border: none;
+  border-radius: 5px;
+  height: 35px;
+  padding: 5px 15px;
+}
+
+.ctn-login input {
+  width: 100%;
+}
+
+.ctn-login input:focus {
+  outline-color: var(--bg-grad-one);
+}
+
+.ctn-login button {
+  color: #1d1d1d;
+  cursor: pointer;
+  font-family: Merienda , cursive;
+  margin-top: 25px;
+}
+
+.ctn-login button:enabled {
+  background-color: var(--bg-main);
+  transition: 0.4s;
+}
+
+.ctn-login button:enabled:hover {
+  background-color: #7178bd;
+  box-shadow: 2px 2px 5px 3px rgba(0, 0, 0, 0.3);
+  color: var(--bg-main);
+  /* opacity: 0.7; */
+  transition: 0.4s;
+}
