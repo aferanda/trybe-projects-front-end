@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
 import MusicCard from '../components/MusicCard';
+import { getFavoriteSongs } from '../services/favoriteSongsAPI';
+import Loading from '../components/Loading';
 
 class Album extends Component {
   constructor(props) {
@@ -11,22 +13,43 @@ class Album extends Component {
     this.state = {
       album: [],
       resolve: false,
+      loading: false,
+      favorites: [],
     };
 
-    this.getMusicsApi = this.getMusicsApi.bind(this);
     this.getInfoMusics = this.getInfoMusics.bind(this);
+    this.verifyCheck = this.verifyCheck.bind(this);
   }
 
   componentDidMount() {
     this.getMusicsApi();
+    this.getFavoriteSongsApi();
+  }
+
+  componentDidUpdate(_prevProps, prevState) {
+    const { favorites } = this.state;
+    if (prevState.favorites !== favorites) {
+      this.verifyCheck();
+    }
   }
 
   async getMusicsApi() {
     const { match: { params: { id } } } = this.props;
-    const api = await getMusics(id);
+    const musics = await getMusics(id);
     this.setState({
-      album: api,
+      album: musics,
       resolve: true,
+    });
+  }
+
+  async getFavoriteSongsApi() {
+    this.setState({
+      loading: true,
+    });
+    const favoriteSongs = await getFavoriteSongs();
+    this.setState({
+      favorites: favoriteSongs,
+      loading: false,
     });
   }
 
@@ -44,10 +67,21 @@ class Album extends Component {
     }
   }
 
+  verifyCheck() {
+    const { favorites } = this.state;
+    favorites.forEach(({ trackId }) => {
+      const favoriteMusic = document.getElementById(trackId);
+      if (favoriteMusic) {
+        favoriteMusic.checked = true;
+      }
+    });
+  }
+
   render() {
-    const { album } = this.state;
+    const { album, loading } = this.state;
     return (
       <div data-testid="page-album">
+        { loading && <Loading />}
         <Header />
         { this.getInfoMusics() }
         { album.slice(1).map((music) => (
