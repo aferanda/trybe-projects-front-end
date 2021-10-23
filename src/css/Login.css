@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@700&display=swap') ;
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&family=Merienda:wght@700&display=swap') ;
 
 * {
   box-sizing: border-box;
@@ -14,6 +14,8 @@
 
   --bg-grad-two: #9198e5;
 
+  --font: #1d1d1d;
+
   --sh-one: 0 1px 4px rgba(0, 0, 0, 0.3);
 
   --sh-two: -20px 0 20px -23px rgba(0, 0, 0, 0.8);
@@ -28,17 +30,17 @@ html, body {
 }
 
 body {
-  align-items: center;
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-  width: 100vw;
+  color: var(--font);
+  font-family: Merienda , cursive;
+  list-style: none;
 }
 
 .container {
   align-items: center;
   display: flex;
+  height: 100vh;
   justify-content: center;
+  width: 100vw;
 }
 
 .ctn-login {
@@ -48,10 +50,19 @@ body {
   flex-direction: column;
   height: 300px;
   opacity: 0.9;
+  position: relative;
   width: 500px;
 }
 
-.ctn-login input::placeholder {
+.ctn-login .title {
+  bottom: 120%;
+  color: var(--font);
+  font-family: Merienda , cursive;
+  font-size: 2rem;
+  position: absolute;
+}
+
+.ctn-login input::placeholder, .ctn-search input::placeholder {
   font-family: Merienda , cursive;
   opacity: 0.6;
 }
@@ -64,7 +75,7 @@ body {
   width: 70%;
 }
 
-.ctn-login input, .ctn-login button {
+.ctn-login input, .ctn-login button, .ctn-search input, .ctn-search button {
   border: none;
   border-radius: 5px;
   height: 35px;
@@ -80,7 +91,7 @@ body {
 }
 
 .ctn-login button {
-  color: #1d1d1d;
+  color: var(--font);
   cursor: pointer;
   font-family: Merienda , cursive;
   margin-top: 25px;
@@ -92,7 +103,7 @@ body {
 }
 
 .ctn-login button:enabled:hover {
-  background-color: #7178bd;
+  background-color: var(--bg-grad-two);
   box-shadow: 2px 2px 5px 3px rgba(0, 0, 0, 0.3);
   color: var(--bg-main);
   transition: 0.4s;

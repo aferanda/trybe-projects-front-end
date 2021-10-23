@@ -51,11 +51,11 @@ class Search extends Component {
     }
     if (resolve) {
       return (
-        <div>
+        <div className="result-albums">
           <h2>{`Resultado de álbuns de: ${artistSearch}`}</h2>
-          <section>
+          <section className="albums">
             { albums.map((album, index) => (
-              <div key={ album.collectionId }>
+              <div key={ album.collectionId } className="album">
                 <img src={ album.artworkUrl100 } alt={ album.collectionName } />
                 <p>{ album.collectionName }</p>
                 <Link
@@ -75,10 +75,10 @@ class Search extends Component {
   render() {
     const { artist, minLength, loading } = this.state;
     return (
-      <div data-testid="page-search">
+      <div data-testid="page-search" className="page-search">
         { loading && <Loading /> }
         <Header />
-        <form>
+        <form className="ctn-search">
           <label htmlFor="search-artist-input">
             <input
               name="artist"

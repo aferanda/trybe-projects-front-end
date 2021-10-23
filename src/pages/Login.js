@@ -47,10 +47,11 @@ class Login extends Component {
   render() {
     const { name, minLength, loading, search } = this.state;
     return (
-      <div data-testid="page-login">
+      <div data-testid="page-login" className="container page-login">
         { loading && <Loading /> }
         { search && <Redirect to="/search" /> }
         <form className="container ctn-login">
+          <p className="title">Music Store</p>
           <label htmlFor="login-name-input">
             <span>Nome:</span>
             <input
