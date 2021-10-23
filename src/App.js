@@ -10,6 +10,7 @@ import NotFound from './pages/NotFound';
 import './css/App.css';
 import './css/Login.css';
 import './css/Search.css';
+import './css/Album.css';
 
 class App extends React.Component {
   render() {

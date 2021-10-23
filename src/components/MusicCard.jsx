@@ -46,9 +46,9 @@ class MusicCard extends Component {
     const { music: { trackId, trackName, previewUrl } } = this.props;
     const { loading } = this.state;
     return (
-      <div>
+      <div className="ctn-audio">
         { loading && <Loading /> }
-        <div>
+        <div className="audio">
           <h4>{ trackName }</h4>
           <audio data-testid="audio-component" src={ previewUrl } controls>
             <track kind="captions" />

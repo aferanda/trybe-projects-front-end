@@ -58,7 +58,7 @@ class Album extends Component {
     if (resolve) {
       const { artworkUrl100, artistName, collectionName } = album[0];
       return (
-        <div>
+        <div className="collection">
           <img src={ artworkUrl100 } alt={ artistName } />
           <h3 data-testid="album-name">{collectionName}</h3>
           <p data-testid="artist-name">{artistName}</p>
@@ -83,13 +83,15 @@ class Album extends Component {
       <div data-testid="page-album">
         { loading && <Loading />}
         <Header />
-        { this.getInfoMusics() }
-        { album.slice(1).map((music) => (
-          <MusicCard
-            key={ music.trackId }
-            music={ music }
-          />
-        ))}
+        <div className="ctn-audios">
+          { this.getInfoMusics() }
+          { album.slice(1).map((music) => (
+            <MusicCard
+              key={ music.trackId }
+              music={ music }
+            />
+          ))}
+        </div>
       </div>
     );
   }
