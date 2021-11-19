@@ -2,13 +2,11 @@
 import { WALLET } from '../actions';
 
 const INITIAL_STATE = {
-  wallet: {
-    currencies: [],
-    expenses: [],
-  },
+  currencies: [],
+  expenses: [],
 };
 
-const walletReducer = (state = INITIAL_STATE, action) => {
+const wallet = (state = INITIAL_STATE, action) => {
   switch (action.type) {
   case WALLET:
     return action.payload;
@@ -17,4 +15,4 @@ const walletReducer = (state = INITIAL_STATE, action) => {
   }
 };
 
-export default walletReducer;
+export default wallet;

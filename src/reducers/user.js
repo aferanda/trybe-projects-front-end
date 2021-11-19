@@ -2,18 +2,16 @@
 import { USER } from '../actions';
 
 const INITIAL_STATE = {
-  user: {
-    email: '',
-  },
+  email: '',
 };
 
-const userReducer = (state = INITIAL_STATE, action) => {
+const user = (state = INITIAL_STATE, action) => {
   switch (action.type) {
   case USER:
-    return action.payload;
+    return { email: action.payload };
   default:
     return state;
   }
 };
 
-export default userReducer;
+export default user;
