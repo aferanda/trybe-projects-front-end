@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { user } from '../actions';
+import { inputEmail } from '../actions';
 
 class Login extends Component {
   constructor() {
@@ -33,8 +33,9 @@ class Login extends Component {
   render() {
     const { email, password } = this.state;
     const MIN_LENGTH = 6;
-    const regex = /\S+@\S+\.\S+/; // Fonte: https://www.horadecodar.com.br/2020/09/13/como-validar-email-com-javascript/
-    const isDisabled = regex.test(email) && password.length >= MIN_LENGTH;
+    const regexEmail = /\S+@\S+\.\S+/; // Fonte: https://www.horadecodar.com.br/2020/09/13/como-validar-email-com-javascript/
+    const isDisabled = regexEmail.test(email) && password.length >= MIN_LENGTH;
+
     return (
       <div>
         <form onSubmit={ this.handleClick }>
@@ -80,7 +81,7 @@ Login.propTypes = {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  getEmail: (state) => dispatch(user(state)),
+  getEmail: (state) => dispatch(inputEmail(state)),
 });
 
 export default connect(null, mapDispatchToProps)(Login);

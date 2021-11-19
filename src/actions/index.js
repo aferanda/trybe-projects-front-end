@@ -1,9 +1,9 @@
 // Coloque aqui suas actions
-export const USER = 'USER';
+export const INPUT_EMAIL = 'INPUT_EMAIL';
 export const WALLET = 'WALLET';
 
-export const user = (payload) => ({
-  type: USER,
+export const inputEmail = (payload) => ({
+  type: INPUT_EMAIL,
   payload,
 });
 
