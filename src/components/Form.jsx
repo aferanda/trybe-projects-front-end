@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { inputWallet } from '../actions';
+import { getExpenses, fetchCurrencies } from '../actions';
 
 class Form extends Component {
   constructor() {
@@ -9,14 +9,19 @@ class Form extends Component {
 
     this.state = {
       value: '',
-      currency: '',
-      method: '',
-      tag: '',
+      currency: 'USD',
+      method: 'Dinheiro',
+      tag: 'Alimentação',
       description: '',
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
+  }
+
+  componentDidMount() {
+    const { getCurrencies } = this.props;
+    getCurrencies();
   }
 
   handleChange({ target }) {
@@ -26,9 +31,10 @@ class Form extends Component {
   }
 
   handleClick(e) {
-    const { getWallet } = this.props;
     e.preventDefault();
-    getWallet(this.state);
+    const { getCurrencies, addExpenses, addCurrencies } = this.props;
+    getCurrencies();
+    addExpenses({ ...this.state, exchangeRates: addCurrencies });
   }
 
   valueInput() {
@@ -49,6 +55,7 @@ class Form extends Component {
 
   currencyInput() {
     const { currency } = this.state;
+    const { addCurrencies } = this.props;
     return (
       <label htmlFor="currency-input">
         Moeda:
@@ -58,7 +65,10 @@ class Form extends Component {
           value={ currency }
           data-testid="currency-input"
         >
-          <option value="BRL">BRL</option>
+          { Object.keys(addCurrencies)
+            .filter((key) => key !== 'USDT')
+            .map((elem) => (
+              <option key={ elem } data-testid={ elem }>{elem}</option>)) }
         </select>
       </label>
     );
@@ -137,11 +147,18 @@ class Form extends Component {
 }
 
 Form.propTypes = {
-  getWallet: PropTypes.func.isRequired,
+  addCurrencies: PropTypes.arrayOf(PropTypes.objectOf).isRequired,
+  addExpenses: PropTypes.func.isRequired,
+  getCurrencies: PropTypes.func.isRequired,
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  getWallet: (state) => dispatch(inputWallet(state)),
+const mapStateToProps = (state) => ({
+  addCurrencies: state.wallet.currencies,
 });
 
-export default connect(null, mapDispatchToProps)(Form);
+const mapDispatchToProps = (dispatch) => ({
+  getCurrencies: () => dispatch(fetchCurrencies()),
+  addExpenses: (state) => dispatch(getExpenses(state)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Form);
