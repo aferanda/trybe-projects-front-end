@@ -19,7 +19,7 @@ class Form extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     const { getCurrencies } = this.props;
     getCurrencies();
   }
@@ -66,7 +66,6 @@ class Form extends Component {
           data-testid="currency-input"
         >
           { Object.keys(addCurrencies)
-            .filter((key) => key !== 'USDT')
             .map((elem) => (
               <option key={ elem } data-testid={ elem }>{elem}</option>)) }
         </select>

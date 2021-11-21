@@ -24,6 +24,7 @@ export function fetchCurrencies() {
     // dispatch(getCurrencies());
     try {
       const currencies = await fetchAPI();
+      delete currencies.USDT;
       // const keysCurrencies = Object.keys(currencies).filter((key) => key !== 'USDT');
       dispatch(getCurrencies(currencies));
     } catch (error) {
