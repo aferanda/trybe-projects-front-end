@@ -19,7 +19,7 @@ class Form extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  async componentDidMount() {
+  componentDidMount() {
     const { getCurrencies } = this.props;
     getCurrencies();
   }
@@ -30,11 +30,11 @@ class Form extends Component {
     });
   }
 
-  handleClick(e) {
+  async handleClick(e) {
     e.preventDefault();
-    const { getCurrencies, addExpenses, addCurrencies } = this.props;
-    getCurrencies();
-    addExpenses({ ...this.state, exchangeRates: addCurrencies });
+    const { getCurrencies, addExpenses, allCurrencies } = this.props;
+    await getCurrencies();
+    addExpenses({ ...this.state, exchangeRates: allCurrencies });
   }
 
   valueInput() {
@@ -55,7 +55,7 @@ class Form extends Component {
 
   currencyInput() {
     const { currency } = this.state;
-    const { addCurrencies } = this.props;
+    const { keysCurrencies } = this.props;
     return (
       <label htmlFor="currency-input">
         Moeda:
@@ -65,7 +65,7 @@ class Form extends Component {
           value={ currency }
           data-testid="currency-input"
         >
-          { Object.keys(addCurrencies)
+          { keysCurrencies
             .map((elem) => (
               <option key={ elem } data-testid={ elem }>{elem}</option>)) }
         </select>
@@ -146,13 +146,17 @@ class Form extends Component {
 }
 
 Form.propTypes = {
-  addCurrencies: PropTypes.arrayOf(PropTypes.objectOf).isRequired,
   addExpenses: PropTypes.func.isRequired,
+  allCurrencies: PropTypes.arrayOf(PropTypes.string).isRequired,
   getCurrencies: PropTypes.func.isRequired,
+  keysCurrencies: PropTypes.shape({
+    map: PropTypes.func.isRequired,
+  }).isRequired,
 };
 
 const mapStateToProps = (state) => ({
-  addCurrencies: state.wallet.currencies,
+  keysCurrencies: state.wallet.currencies,
+  allCurrencies: state.wallet.allCurrencies,
 });
 
 const mapDispatchToProps = (dispatch) => ({

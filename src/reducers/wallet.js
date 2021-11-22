@@ -1,6 +1,7 @@
 import { GET_CURRENCIES, GET_EXPENSES } from '../actions';
 
 const INITIAL_STATE = {
+  allCurrencies: {},
   currencies: [],
   expenses: [],
 };
@@ -8,7 +9,10 @@ const INITIAL_STATE = {
 const wallet = (state = INITIAL_STATE, action) => {
   switch (action.type) {
   case GET_CURRENCIES:
-    return { ...state, currencies: action.payload };
+    return { ...state,
+      currencies: action.keysCurrencies,
+      allCurrencies: action.allCurrencies,
+    };
   case GET_EXPENSES:
     return {
       ...state,

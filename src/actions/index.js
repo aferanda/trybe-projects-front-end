@@ -9,9 +9,10 @@ export const inputEmail = (payload) => ({
   payload,
 });
 
-export const getCurrencies = (payload) => ({
+export const getCurrencies = (allCurrencies, keysCurrencies) => ({
   type: GET_CURRENCIES,
-  payload,
+  allCurrencies,
+  keysCurrencies,
 });
 
 export const getExpenses = (payload) => ({
@@ -21,12 +22,11 @@ export const getExpenses = (payload) => ({
 
 export function fetchCurrencies() {
   return async (dispatch) => {
-    // dispatch(getCurrencies());
     try {
-      const currencies = await fetchAPI();
-      delete currencies.USDT;
-      // const keysCurrencies = Object.keys(currencies).filter((key) => key !== 'USDT');
-      dispatch(getCurrencies(currencies));
+      const allCurrencies = await fetchAPI();
+      delete allCurrencies.USDT;
+      const keysCurrencies = Object.keys(allCurrencies);
+      dispatch(getCurrencies(allCurrencies, keysCurrencies));
     } catch (error) {
       console.error(error);
     }

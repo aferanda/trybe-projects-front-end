@@ -12,9 +12,9 @@ class Header extends Component {
         </p>
         <p data-testid="total-field">
           { 'Despesa Total: R$ ' }
-          { getExpenses.reduce((acc, cur) => (
+          { parseFloat(getExpenses.reduce((acc, cur) => (
             acc + (cur.value * cur.exchangeRates[cur.currency].ask)
-          ), 0) }
+          ), 0)).toFixed(2) }
           <span data-testid="header-currency-field"> BRL</span>
         </p>
       </header>
