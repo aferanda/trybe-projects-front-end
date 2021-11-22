@@ -30,11 +30,18 @@ class Form extends Component {
     });
   }
 
-  async handleClick(e) {
+  handleClick(e) {
     e.preventDefault();
     const { getCurrencies, addExpenses, allCurrencies } = this.props;
-    await getCurrencies();
+    getCurrencies();
     addExpenses({ ...this.state, exchangeRates: allCurrencies });
+    this.setState({
+      value: '',
+      currency: 'USD',
+      method: 'Dinheiro',
+      tag: 'Alimentação',
+      description: '',
+    });
   }
 
   valueInput() {
@@ -43,6 +50,7 @@ class Form extends Component {
       <label htmlFor="value-input">
         Valor:
         <input
+          id="value-input"
           type="number"
           name="value"
           value={ value }
@@ -60,14 +68,15 @@ class Form extends Component {
       <label htmlFor="currency-input">
         Moeda:
         <select
+          id="currency-input"
+          data-testid="currency-input"
           onChange={ this.handleChange }
           name="currency"
           value={ currency }
-          data-testid="currency-input"
         >
           { keysCurrencies
             .map((elem) => (
-              <option key={ elem } data-testid={ elem }>{elem}</option>)) }
+              <option key={ elem } value={ elem } data-testid={ elem }>{elem}</option>)) }
         </select>
       </label>
     );
@@ -79,6 +88,7 @@ class Form extends Component {
       <label htmlFor="method-input">
         Método de pagamento:
         <select
+          id="method-input"
           onChange={ this.handleChange }
           name="method"
           value={ method }
@@ -86,7 +96,7 @@ class Form extends Component {
         >
           <option value="Dinheiro">Dinheiro</option>
           <option value="Cartão de crédito">Cartão de crédito</option>
-          <option value="Cartão de cébito">Cartão de débito</option>
+          <option value="Cartão de débito">Cartão de débito</option>
         </select>
       </label>
     );
@@ -98,6 +108,7 @@ class Form extends Component {
       <label htmlFor="tag-input">
         Tag:
         <select
+          id="tag-input"
           onChange={ this.handleChange }
           name="tag"
           value={ tag }
@@ -119,6 +130,7 @@ class Form extends Component {
       <label htmlFor="description-input">
         Descrição:
         <input
+          id="description-input"
           type="text"
           name="description"
           value={ description }
@@ -147,11 +159,14 @@ class Form extends Component {
 
 Form.propTypes = {
   addExpenses: PropTypes.func.isRequired,
-  allCurrencies: PropTypes.arrayOf(PropTypes.string).isRequired,
+  allCurrencies: PropTypes.objectOf(PropTypes.object),
   getCurrencies: PropTypes.func.isRequired,
-  keysCurrencies: PropTypes.shape({
-    map: PropTypes.func.isRequired,
-  }).isRequired,
+  keysCurrencies: PropTypes.arrayOf(PropTypes.string),
+};
+
+Form.defaultProps = {
+  allCurrencies: {},
+  keysCurrencies: [],
 };
 
 const mapStateToProps = (state) => ({

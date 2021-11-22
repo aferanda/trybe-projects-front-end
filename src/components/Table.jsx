@@ -48,9 +48,11 @@ class Table extends Component {
 }
 
 Table.propTypes = {
-  getExpenses: PropTypes.shape({
-    map: PropTypes.func.isRequired,
-  }).isRequired,
+  getExpenses: PropTypes.arrayOf(PropTypes.object),
+};
+
+Table.defaultProps = {
+  getExpenses: [],
 };
 
 const mapStateToProps = (state) => ({
