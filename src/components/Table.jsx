@@ -32,6 +32,14 @@ class Table extends Component {
                 <td>{ parseFloat(exchangeRates[currency].ask).toFixed(2) }</td>
                 <td>{ value * exchangeRates[currency].ask }</td>
                 <td>Real</td>
+                <td>
+                  <button
+                    type="button"
+                    data-testid="delete-btn"
+                  >
+                    ![image](btnExcluir.gif)
+                  </button>
+                </td>
               </tr>))}
         </tbody>
       </table>
