@@ -30,7 +30,7 @@ class Table extends Component {
                 <td>{ value }</td>
                 <td>{ (exchangeRates[currency].name).split('/')[0] }</td>
                 <td>{ parseFloat(exchangeRates[currency].ask).toFixed(2) }</td>
-                <td>{ value * exchangeRates[currency].ask }</td>
+                <td>{ parseFloat(value * exchangeRates[currency].ask).toFixed(2) }</td>
                 <td>Real</td>
                 <td>
                   <button

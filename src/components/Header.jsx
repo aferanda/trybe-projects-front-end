@@ -12,8 +12,8 @@ class Header extends Component {
         </p>
         <p data-testid="total-field">
           { 'Despesa Total: R$ ' }
-          { parseFloat(getExpenses.reduce((acc, cur) => (
-            acc + (cur.value * cur.exchangeRates[cur.currency].ask)
+          { parseFloat(getExpenses.reduce((acc, { value, exchangeRates, currency }) => (
+            acc + (value * exchangeRates[currency].ask)
           ), 0)).toFixed(2) }
           <span data-testid="header-currency-field"> BRL</span>
         </p>
@@ -24,7 +24,7 @@ class Header extends Component {
 
 Header.propTypes = {
   getEmail: PropTypes.string.isRequired,
-  getExpenses: PropTypes.arrayOf(PropTypes.objectOf).isRequired,
+  getExpenses: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 const mapStateToProps = (state) => ({

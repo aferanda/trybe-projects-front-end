@@ -37,9 +37,6 @@ class Form extends Component {
     addExpenses({ ...this.state, exchangeRates: allCurrencies });
     this.setState({
       value: '',
-      currency: 'USD',
-      method: 'Dinheiro',
-      tag: 'Alimentação',
       description: '',
     });
   }
