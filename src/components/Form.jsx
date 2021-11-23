@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getExpenses, fetchCurrencies } from '../actions';
+import { actionExpenses, actionFetchWithThunk } from '../actions';
 
 class Form extends Component {
   constructor() {
@@ -20,8 +20,8 @@ class Form extends Component {
   }
 
   componentDidMount() {
-    const { getCurrencies } = this.props;
-    getCurrencies();
+    const { setCurrencies } = this.props;
+    setCurrencies();
   }
 
   handleChange({ target }) {
@@ -32,9 +32,9 @@ class Form extends Component {
 
   handleClick(e) {
     e.preventDefault();
-    const { getCurrencies, addExpenses, allCurrencies } = this.props;
-    getCurrencies();
-    addExpenses({ ...this.state, exchangeRates: allCurrencies });
+    const { setCurrencies, setExpenses, allCurrencies } = this.props;
+    setCurrencies();
+    setExpenses({ ...this.state, exchangeRates: allCurrencies });
     this.setState({
       value: '',
       description: '',
@@ -155,9 +155,9 @@ class Form extends Component {
 }
 
 Form.propTypes = {
-  addExpenses: PropTypes.func.isRequired,
+  setExpenses: PropTypes.func.isRequired,
+  setCurrencies: PropTypes.func.isRequired,
   allCurrencies: PropTypes.objectOf(PropTypes.object),
-  getCurrencies: PropTypes.func.isRequired,
   keysCurrencies: PropTypes.arrayOf(PropTypes.string),
 };
 
@@ -172,8 +172,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  getCurrencies: () => dispatch(fetchCurrencies()),
-  addExpenses: (state) => dispatch(getExpenses(state)),
+  setCurrencies: () => dispatch(actionFetchWithThunk()),
+  setExpenses: (state) => dispatch(actionExpenses(state)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Form);
