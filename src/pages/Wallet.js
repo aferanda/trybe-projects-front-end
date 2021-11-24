@@ -6,7 +6,7 @@ import Table from '../components/Table';
 class Wallet extends Component {
   render() {
     return (
-      <div>
+      <div className="container-wallet">
         <Header />
         <Form />
         <Table />

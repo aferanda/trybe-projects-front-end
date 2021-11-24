@@ -24,7 +24,8 @@ const wallet = (state = INITIAL_STATE, action) => {
   case DELETE_CLICK:
     return {
       ...state,
-      expenses: state.expenses.filter((expense) => expense.id !== action.payload) };
+      expenses: state.expenses.filter((expense) => expense.id !== action.payload),
+    };
   default:
     return state;
   }

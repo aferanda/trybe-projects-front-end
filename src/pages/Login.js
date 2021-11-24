@@ -37,8 +37,10 @@ class Login extends Component {
     const isDisabled = regexEmail.test(email) && password.length >= MIN_LENGTH;
 
     return (
-      <div>
+      <div className="container-fluid">
         <form onSubmit={ this.handleClick }>
+          <h1>Login</h1>
+          <h2>Seja bem vindo!</h2>
           <label htmlFor="input-email">
             <input
               type="email"
