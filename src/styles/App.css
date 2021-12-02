@@ -69,6 +69,18 @@ html , body {
   text-align: center;
 }
 
+.container-wallet table button {
+  background-color: #ff667a;
+  border: none;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 0 0 #fff6af;
+  color: #fafafa;
+  cursor: pointer;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 7px 12px;
+}
+
 /*  LOGIN */
 .container-fluid {
   align-items: center;

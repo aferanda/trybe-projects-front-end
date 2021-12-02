@@ -39,7 +39,7 @@ class Table extends Component {
                     data-testid="delete-btn"
                     onClick={ () => deleteExpense(id) }
                   >
-                    ![image](btnExcluir.gif)
+                    X
                   </button>
                 </td>
               </tr>))}
