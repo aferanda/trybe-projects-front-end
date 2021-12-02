@@ -1,0 +1,60 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 450px;
+  width: 100%;
+}
+
+.form label {
+  font-weight: 700;
+  line-height: 30px;
+}
+
+.form input, .form textarea, .form select {
+  border: none;
+  border-bottom: 1px solid var(--font-dark);
+  font-family: Montserrat , sans-serif;
+  width: 100%;
+}
+
+.form input, .form select {
+  line-height: 30px;
+}
+
+.form label:nth-child( n+3 ):nth-child( -n+5 ) {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form label:nth-child( n+3 ):nth-child( -n+5 ) input {
+  border: 1px solid var(--font-dark);
+  text-align: end;
+  width: 80%;
+}
+
+.form select {
+  padding: 10px 0;
+}
+
+.form .trunfo {
+  accent-color: var(--bg-card);
+  margin-right: 10px;
+  width: max-content;
+}
+
+.form button {
+  background-color: var(--btn-active);
+  border: none;
+  border-radius: 3px;
+  color: var(--font-light);
+  font-family: Montserrat , sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 10px;
+  width: 100px;
+}
+
+.form button:disabled {
+  background-color: var(--btn-disabled);
+}

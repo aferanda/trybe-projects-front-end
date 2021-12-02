@@ -1,0 +1,119 @@
+.card {
+  background-color: var(--bg-card);
+  border: 7px solid var(--font-light);
+  border-radius: 10px;
+  color: var(--font-light);
+  display: flex;
+  height: 450px;
+  position: relative;
+  width: 300px;
+}
+
+.card .card-box {
+  background-color: var(--bg-card);
+  border: 13px solid var(--bg-card);
+  border-bottom-width: 13px;
+  border-radius: 10px;
+  border-top-width: 13px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.card .card-header {
+  background-color: var(--bg-dark);
+  border-radius: 6px 6px 0 0;
+  height: 30px;
+}
+
+.card-title {
+  color: var(--font-light);
+}
+
+.card h3 {
+  border-radius: 6px 6px 0 0;
+  color: var(--font-light);
+  line-height: 30px;
+  padding-right: 5px;
+  text-align: end;
+}
+
+.card .image-card {
+  background: url('https://meneguite.com/2017/10/01/golang-desbravando-uma-linguagem-de-programacao-parte-1/001.gif');
+  background-size: contain;
+  height: 180px;
+  width: 260px;
+}
+
+.card .description {
+  font-size: 0.6rem;
+  font-weight: 500;
+  height: 60px;
+  padding: 3px 0;
+  text-align: justify;
+  width: 100%;
+  word-break: break-all;
+}
+
+.card .card-attr {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 5px;
+}
+
+.card .card-attr span {
+  background-color: var(--font-light);
+  border-radius: 5px 0 0 5px;
+  color: var(--font-dark);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 5px;
+  width: 80%;
+}
+
+.card .card-attr p {
+  background-color: var(--font-dark);
+  border-radius: 0 5px 5px 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 5px;
+  text-align: end;
+  width: 20%;
+}
+
+.card .card-rare-trunfo {
+  align-items: center;
+  display: flex;
+  font-weight: 700;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.card .card-trunfo {
+  background: linear-gradient(to top right, blue, darkgreen);
+  border: 1px dashed var(--font-light);
+  border-radius: 50px;
+  bottom: 10px;
+  font-size: 0.5rem;
+  padding: 12px 3px;
+  position: absolute;
+  right: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  transform: rotateZ(329deg);
+  width: 45px;
+}
+
+.card button {
+  align-self: center;
+  background: linear-gradient(to bottom, white, darkgreen, #ffda00);
+  border: none;
+  border-radius: 6px;
+  color: var(--font-light);
+  cursor: pointer;
+  font-family: Montserrat , sans-serif;
+  font-weight: 700;
+  padding: 7px 13px;
+}
