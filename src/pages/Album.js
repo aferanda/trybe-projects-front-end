@@ -81,17 +81,20 @@ class Album extends Component {
     const { album, loading } = this.state;
     return (
       <div data-testid="page-album">
-        { loading && <Loading />}
-        <Header />
-        <div className="ctn-audios">
-          { this.getInfoMusics() }
-          { album.slice(1).map((music) => (
-            <MusicCard
-              key={ music.trackId }
-              music={ music }
-            />
-          ))}
-        </div>
+        { loading ? <Loading /> : (
+          <>
+            <Header />
+            <div className="ctn-audios">
+              {this.getInfoMusics()}
+              {album.slice(1).map((music) => (
+                <MusicCard
+                  key={ music.trackId }
+                  music={ music }
+                />
+              ))}
+            </div>
+          </>
+        )}
       </div>
     );
   }

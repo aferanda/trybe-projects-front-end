@@ -48,31 +48,32 @@ class Login extends Component {
     const { name, minLength, loading, search } = this.state;
     return (
       <div data-testid="page-login" className="container page-login">
-        { loading && <Loading /> }
+        { loading ? <Loading /> : (
+          <form className="container ctn-login">
+            <p className="title">Music Store</p>
+            <label htmlFor="login-name-input">
+              <span>Nome:</span>
+              <input
+                type="text"
+                name="name"
+                autoComplete="off"
+                value={ name }
+                onChange={ this.onInputChange }
+                placeholder="Nome"
+                data-testid="login-name-input"
+              />
+            </label>
+            <button
+              type="submit"
+              disabled={ name.length < minLength }
+              onClick={ this.onClickButton }
+              data-testid="login-submit-button"
+            >
+              Entrar
+            </button>
+          </form>
+        ) }
         { search && <Redirect to="/search" /> }
-        <form className="container ctn-login">
-          <p className="title">Music Store</p>
-          <label htmlFor="login-name-input">
-            <span>Nome:</span>
-            <input
-              type="text"
-              name="name"
-              autoComplete="off"
-              value={ name }
-              onChange={ this.onInputChange }
-              placeholder="Nome"
-              data-testid="login-name-input"
-            />
-          </label>
-          <button
-            type="submit"
-            disabled={ name.length < minLength }
-            onClick={ this.onClickButton }
-            data-testid="login-submit-button"
-          >
-            Entrar
-          </button>
-        </form>
       </div>
     );
   }

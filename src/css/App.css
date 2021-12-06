@@ -35,6 +35,15 @@ body {
   list-style: none;
 }
 
+.preload {
+  background: linear-gradient(216deg, var(--bg-grad-one), var(--bg-grad-two));
+  z-index: 1;
+}
+
+.loading {
+  color: var(--bg-main);
+}
+
 .container {
   align-items: center;
   display: flex;

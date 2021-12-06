@@ -76,28 +76,31 @@ class Search extends Component {
     const { artist, minLength, loading } = this.state;
     return (
       <div data-testid="page-search" className="page-search">
-        { loading && <Loading /> }
-        <Header />
-        <form className="ctn-search">
-          <label htmlFor="search-artist-input">
-            <input
-              name="artist"
-              value={ artist }
-              onChange={ this.onInputChange }
-              placeholder="Nome do Artista"
-              data-testid="search-artist-input"
-            />
-          </label>
-          <button
-            type="button"
-            onClick={ () => this.onClickButton(artist) }
-            disabled={ artist.length < minLength }
-            data-testid="search-artist-button"
-          >
-            Pesquisar
-          </button>
-          { this.renderAlbums() }
-        </form>
+        { loading ? <Loading /> : (
+          <>
+            <Header />
+            <form className="ctn-search">
+              <label htmlFor="search-artist-input">
+                <input
+                  name="artist"
+                  value={ artist }
+                  onChange={ this.onInputChange }
+                  placeholder="Nome do Artista"
+                  data-testid="search-artist-input"
+                />
+              </label>
+              <button
+                type="button"
+                onClick={ () => this.onClickButton(artist) }
+                disabled={ artist.length < minLength }
+                data-testid="search-artist-button"
+              >
+                Pesquisar
+              </button>
+              {this.renderAlbums()}
+            </form>
+          </>
+        )}
       </div>
     );
   }
