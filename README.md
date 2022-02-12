@@ -7,3 +7,4 @@ Aplicativo todolist (lista de tarefas) feito durante o Curso de Desenvolvimento 
 - JavaScript
 
 #### 📸 Layout:
+![Desktop](./screenshot.png)

@@ -200,9 +200,6 @@ dist
 .trybe
 cypress
 .editorconfig
-.eslintignore
-.eslintrc.json
-.stylelintrc.json
 cypress.json
 todo-list-example.gif
 .gitignore
