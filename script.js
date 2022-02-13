@@ -66,17 +66,14 @@ selectColor();
 // Requisito 8
 const arrayPixels = document.getElementsByClassName('pixel');
 const pixelBox = [];
-for (let index = 0; index < arrayPixels.length; index += 1) {
-  pixelBox.push(arrayPixels[index]);
-}
 function pixelColor() {
-  document.body.addEventListener('click', (event) => {
-    if (!(pixelBox.includes(event.target))) {
-      return;
-    }
-    const evento = event.target;
-    evento.style.backgroundColor = colorSelected.style.backgroundColor;
-  });
+  for (let index = 0; index < arrayPixels.length; index += 1) {
+    pixelBox.push(arrayPixels[index]);
+    arrayPixels[index].addEventListener('click', (event) => {
+      const evento = event.target;
+      evento.style.backgroundColor = colorSelected.style.backgroundColor;
+    })
+  }
 }
 
 pixelColor();
