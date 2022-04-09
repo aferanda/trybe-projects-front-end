@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&family=Merienda:wght@700&display=swap') ;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+
+  --bg-main: #fafafa;
+
+  --bg-grad-one: #e66465;
+
+  --bg-grad-two: #9198e5;
+
+  --font: #1d1d1d;
+
+  --sh-one: 0 1px 4px rgba(0, 0, 0, 0.3);
+
+  --sh-two: -20px 0 20px -23px rgba(0, 0, 0, 0.8);
+
+  --sh-three: 20px 0 20px -23px rgba(0, 0, 0, 0.8);
+
+  --sh-four: inset 0 0 40px rgba(0, 0, 0, 0.1);
+}
+
+html, body {
+  background-color: var(--bg-main);
+}
+
+body {
+  color: var(--font);
+  font-family: Merienda , cursive;
+  list-style: none;
+}
+
+.preload {
+  background: linear-gradient(216deg, var(--bg-grad-one), var(--bg-grad-two));
+  z-index: 1;
+}
+
+.loading {
+  color: var(--bg-main);
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+}
+
+header {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  height: 150px;
+  justify-content: space-between;
+}
+
+header h1 {
+  font-size: 1.2rem;
+}
+
+header h1, header h2 {
+  color: var(--font);
+  margin: 0 20px;
+  text-align: center;
+}
+
+header h2 {
+  background-color: var(--bg-grad-two);
+  border-radius: 6px;
+  color: var(--bg-main);
+  cursor: pointer;
+  font-size: 0.8rem;
+  padding: 6px 35px;
+}
+
+header nav {
+  align-items: center;
+  background-color: var(--bg-grad-one);
+  color: var(--bg-main);
+  display: flex;
+  height: 50px;
+  justify-content: space-around;
+  width: 100%;
+}
+
+header nav li {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  width: 100%;
+}
+
+header nav li a {
+  color: var(--bg-main);
+  margin: 0;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.4s;
+}
+
+header nav li a:hover {
+  font-size: 1.3rem;
+  transition: 0.4s;
+}

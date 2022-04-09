@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&family=Merienda:wght@700&display=swap') ;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+
+  --bg-main: #fafafa;
+
+  --bg-grad-one: #e66465;
+
+  --bg-grad-two: #9198e5;
+
+  --font: #1d1d1d;
+
+  --sh-one: 0 1px 4px rgba(0, 0, 0, 0.3);
+
+  --sh-two: -20px 0 20px -23px rgba(0, 0, 0, 0.8);
+
+  --sh-three: 20px 0 20px -23px rgba(0, 0, 0, 0.8);
+
+  --sh-four: inset 0 0 40px rgba(0, 0, 0, 0.1);
+}
+
+html, body {
+  background-color: var(--bg-main);
+}
+
+body {
+  color: var(--font);
+  font-family: Merienda , cursive;
+  list-style: none;
+}
+
+.ctn-audios {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  row-gap: 10px;
+}
+
+.collection {
+  font-family: Josefin Sans , sans-serif;
+  margin-left: 20px;
+  width: 100%;
+}
+
+.collection img {
+  width: fit-content;
+}
+
+.collection h3 {
+  font-size: 0.9rem;
+  padding: 15px 0;
+}
+
+.collection p {
+  font-size: 1rem;
+  padding-bottom: 30px;
+}
+
+.ctn-audio {
+  margin: 0 10px;
+  width: 45%;
+}
+
+.audio {
+  align-items: center;
+  display: flex;
+  font-family: Josefin Sans , sans-serif;
+  font-size: 0.8rem;
+  justify-content: space-between;
+}
+
+.audio h4 {
+  width: 80px;
+}
+
+.audio audio {
+  height: 40px;
+  width: 250px;
+}
+
