@@ -1,1 +1,1 @@
-# base
+# Projetos desenvolvidos durante o módulo de front-end na [Trybe](https://www.betrybe.com/).
