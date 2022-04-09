@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap') ;
+
+* {
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: snow;
+  font-family: Atkinson Hyperlegible, sans-serif;
+}
+
+.color {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  display: inline-block;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+#clear-board {
+  margin: 20px auto;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 50px;
+  background-color: pink;
+  color: whitesmoke;
+  cursor: pointer;
+  font-family: Atkinson Hyperlegible, sans-serif;
+}
+
+#generate-board {
+  padding: 5px 8px;
+  border: none;
+  border-radius: 50px;
+  background-color: plum;
+  color: whitesmoke;
+  cursor: pointer;
+  font-family: Atkinson Hyperlegible, sans-serif;
+}
+
+#input-button {
+  margin: 10px auto 20px;
+}
+
+#board-size {
+  margin-right: 10px;
+}
+
+#pixel-board {
+  width: 210px;
+  height: 210px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pixel {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
