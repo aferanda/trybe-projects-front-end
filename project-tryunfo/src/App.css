@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap') ;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+
+  --font-light: #fafafa;
+
+  --font-dark: #444955;
+
+  --bg-dark: #023031;
+
+  --bg-card: #036b52;
+
+  --btn-active: blue;
+
+  --btn-disabled: gainsboro;
+}
+
+html, body {
+  background-color: var(--font-light);
+  color: var(--font-dark);
+  font-family: Montserrat , sans-serif;
+}
+
+.App {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section-form, .section-card {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+  justify-content: center;
+  padding: 50px 80px;
+  width: 50%;
+}
+
+.section-card {
+  background-color: var(--bg-dark);
+}
+
+.section-all-cards {
+  background-color: var(--bg-dark);
+  column-gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 50px;
+  row-gap: 20px;
+  width: 100%;
+}
+
+.section-all-cards h2 {
+  color: var(--font-light);
+  display: flex;
+  line-height: 100px;
+  width: 100%;
+}
+
+.form-title, .card-title {
+  align-self: flex-start;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+@media screen and ( max-width : 800px ) {
+
+  .App {
+    flex-direction: column;
+  }
+
+  .section-form, .section-card {
+    width: 100%;
+  }
+
+  .form-title, .card-title {
+    text-align: center;
+  }
+
+}
