@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+
+* {
+  background-color: rgb(255 , 252 , 240);
+}
+
+body {
+  font-family: Handlee, cursive;
+  margin-top: 100px;
+}
+
+header , p {
+  text-align: center;
+}
+
+input {
+  height: 20px;
+  padding: 3px 20px;
+  margin-right: 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+li {
+  text-transform: capitalize;
+}
+
+.completed {
+  text-decoration: line-through solid black;
+}
+
+button {
+  border: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  color: white;
+  font-family: Handlee, cursive;
+}
+
+#remover-selecionado , #mover-cima , #mover-baixo {
+  padding: 8px 10px;
+}
+
+
+#remover-selecionado , #apaga-tudo , #remover-finalizados {
+  background-color: rgb(255 , 117 , 131);
+}
+
+#criar-tarefa , #mover-cima , #mover-baixo , #salvar-tarefas {
+  background-color: rgb(194 , 225 , 237);
+}
