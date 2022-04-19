@@ -1,57 +1,88 @@
-@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Handlee&family=Montserrat+Alternates:wght@200;300;400&display=swap');
 
 * {
-  background-color: rgb(255 , 252 , 240);
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
   font-family: Handlee, cursive;
   margin-top: 100px;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: linear-gradient(to top right , rgb(82 , 164 , 166) , rgb(186 , 185 , 185));
 }
 
-header , p {
-  text-align: center;
-}
-
-input {
-  height: 20px;
-  padding: 3px 20px;
-  margin-right: 20px;
+section {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  width: 600px;
+  min-height: 700px;
+  border-radius: 20px 3px;
+  background-color: rgba(255 , 255 , 255 , 0.874);
+  box-shadow: 1px 1px 10px 1px rgba(0 , 0 , 0 , 0.209);
+  gap: 10px;
+  align-items: center;
 }
 
 .container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  gap: 10px;
+}
+
+h1 , p {
+  text-align: center;
+}
+
+input {
+  width: 250px;
+  padding: 8px 12px;
+  border: 2px solid rgb(220 , 219 , 219);
+  border-radius: 8px;
+}
+
+input:focus {
+  border: none;
+  outline: 2px solid rgb(146 , 220 , 149);
+}
+
+ol {
+  font-family: Montserrat Alternates, sans-serif;
+  font-weight: 300;
 }
 
 li {
   text-transform: capitalize;
 }
 
-.completed {
-  text-decoration: line-through solid black;
-}
-
 button {
   border: none;
-  border-radius: 50px;
-  padding: 10px 20px;
-  margin-right: 10px;
+  border-radius: 8px;
+  padding: 8px 12px;
   cursor: pointer;
   color: white;
   font-family: Handlee, cursive;
 }
 
-#remover-selecionado , #mover-cima , #mover-baixo {
-  padding: 8px 10px;
+button:hover {
+  opacity: 0.9;
+  position: relative;
+  top: -2px;
 }
 
+.completed {
+  text-decoration: line-through solid black;
+}
 
 #remover-selecionado , #apaga-tudo , #remover-finalizados {
-  background-color: rgb(255 , 117 , 131);
+  background-color: rgb(146 , 220 , 149);
 }
 
 #criar-tarefa , #mover-cima , #mover-baixo , #salvar-tarefas {
-  background-color: rgb(194 , 225 , 237);
+  background-color: rgb(55 , 144 , 179);
 }
