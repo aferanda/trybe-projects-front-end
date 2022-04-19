@@ -90,6 +90,12 @@ function removeSelected() {
 }
 
 // Escutadores buttons
+input.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+    buttonAdd.click();
+  }
+});
 buttonAdd.addEventListener('click', addTasks);
 buttonClearList.addEventListener('click', clearList);
 buttonRemoveCompleted.addEventListener('click', clearCompleted);
