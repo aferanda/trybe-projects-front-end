@@ -20,9 +20,10 @@ body {
 section {
   display: flex;
   flex-direction: column;
-  padding: 50px;
+  position: relative;
+  padding: 50px 50px 150px;
   width: 600px;
-  min-height: 700px;
+  min-height: 500px;
   border-radius: 20px 3px;
   background-color: rgba(255 , 255 , 255 , 0.874);
   box-shadow: 1px 1px 10px 1px rgba(0 , 0 , 0 , 0.209);
@@ -63,7 +64,6 @@ li {
 button {
   border: none;
   border-radius: 8px;
-  padding: 8px 12px;
   cursor: pointer;
   color: white;
   font-family: Handlee, cursive;
@@ -79,10 +79,55 @@ button:hover {
   text-decoration: line-through solid black;
 }
 
+#remover-selecionado , #mover-cima , #mover-baixo {
+  width: 35px;
+  height: 35px;
+}
+
+#apaga-tudo , #remover-finalizados , #salvar-tarefas , #criar-tarefa {
+  padding: 0 12px;
+}
+
 #remover-selecionado , #apaga-tudo , #remover-finalizados {
   background-color: rgb(146 , 220 , 149);
 }
 
 #criar-tarefa , #mover-cima , #mover-baixo , #salvar-tarefas {
   background-color: rgb(55 , 144 , 179);
+}
+
+.postit {
+  position: absolute;
+  left: -40px;
+  bottom: -60px;
+  width: 210px;
+}
+
+.pencil {
+  position: absolute;
+  left: 20px;
+  bottom: -20px;
+  width: 170px;
+}
+
+.pin {
+  position: absolute;
+  top: -40px;
+  right: -33px;
+  width: 130px;
+}
+
+.clips {
+  position: absolute;
+  right: -35px;
+  bottom: -60px;
+  width: 220px;
+}
+
+.clips2 {
+  position: absolute;
+  width: 180px;
+  bottom: -20px;
+  right: 120px;
+  transform: rotate(170deg);
 }
